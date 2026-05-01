@@ -1,472 +1,397 @@
-/* --- VARIABILI CSS --- */
 :root {
-    --font-principale: 'Playfair Display', Georgia, serif;
+    --font-principale: Georgia, 'Times New Roman', Times, Baskerville, serif;
     --colore-sfondo-scuro: #222222;
     --colore-testo-grigio: #555555;
 }
-/* --- RESET BASE --- */
+
 body {
-    margin: 0; /* Rimuove i margini automatici del browser */
+    margin: 0;
     font-family: var(--font-principale);
     background-color: white;
 }
-/* Nascondi i bottoni del menu sui computer */
-.menu-toggle {
-    display: none;
-}
-.white-nav {
-    background-color: white;
-}
-/* PRIMA LISTA DI LINK */
-.white-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none; /* TOGLIE PALLINI AUTOMATICI*/
-    display: flex;  /* "attiva proprietà flex. */
-    justify-content: center;   /*spinge tutti gli elementi al centro della riga  INUTILE CON FLEXGROW*/
-    flex-wrap: wrap; /* Manda a capo i link su schermi stretti */
-}
-/* SINGOLO LINK */
-.white-nav li {
-    text-align: center; /* Centra la scritta dentro il suo nuovo blocco allargato */
-}
-.white-nav li a {
-    display: block;
-    text-decoration: none;   /* TOGLIE SOTTOLINEATURA AUTOMATICA */
-    color: dimgrey;
-    font-size: 0.9rem;
-    padding: 20px 20px 20px 20px;
-    transition: all 0.3s;
-}
-.white-nav li a:hover {
-    color: white;
-    background-color: dimgrey; /* ...e il box si "illumina" di grigio scuro/nero! */
-}
-/* =========================================
-   2. MASTHEAD (Testata)
-   ========================================= */
-/* spazio bianco*/
-.title {
-    background-color: white;
-    text-align: center; /* tutto il testo centrale*/
-    padding: 20px 20px 20px 20px;  /* SU / DESTRA / GIU / SINISTRA */
-}
-/*TITOLO*/
-.title h1 {
-    margin: 0;
-    font-size: 3.5rem; /* Testo grande per la massima visibilità */
-    font-weight: 600; /* SPESSORE / GRASSETTO*/
-    color: black; /*BLACK*/
-}
-/*DIDASCALIE*/
-.title p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: dimgrey;
-}
-/* =========================================
-   3. SECONDA NAVBAR SCURA
-   ========================================= */
-.navbar {
-    background-color: #222222;
-}
-.navbar ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;  /* TOGLIE PALLINI AUTOMATICI*/
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-/* SINGOLO ELEMENTO DELLA LISTA (Il "contenitore" del link) */
-.navbar li {
-    text-align: center; /* Centra la scritta dentro il suo nuovo blocco allargato */
-}
-.navbar li a {
-    display: block;  /*  RENDE INTERO RETTANGOLO CLICCABILE */
-    padding: 15px 15px;
-    color: white;
-    text-decoration: none; /* TOGLIE SOTTOLINEATURA AUTOMATICA */
-    font-size: 0.8rem;
-    transition: all 0.3s;
-}
-.navbar li a:hover {
-    color: white;
-    background-color: #555555; /* ...e il box si "illumina" di grigio scuro/nero! */
-}
-/* =========================================
-   4. HERO SECTION (Notizia principale)
-   ========================================= */
-.hero-container {  /* QUA C'E' SFONDO*/
-    /* Sfondo a tutto schermo */
-    background-image: url('https://placehold.co/1920x800/eeeeee/cccccc?text=Sfondo+Giornale+Sfocato');
-    background-size: cover;
-    background-position: center;
-    padding: 10px 10px;
-    border-bottom: 20px solid #222222;
-}
-.hero-inner {   /* PER ORE E' TUTTO QUI*/
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center; /* Centra verticalmente testo e mappa */
-    gap: 10px;  /* TRA MAPPA E SCRITTE*/
-}
-/* --- Lato Destro (Mappa) --- */
-.hero__mappa {
-    /* FIX APPLICATO ANCHE QUI */
-    flex: 0 300px;
-    padding: 0 30px 100px;
-    align-self: center;
-}
-.hero__mappa img {
-    width: 100%;
-    border: 1px solid white;
-    box-shadow: 0 10px 25px grey; /* Ombra 3D */
-}
-/* --- Lato Sinistro (Testo) --- */
-.hero__testo {
-    /* FIX APPLICATO QUI:
-       I tre numeri sono: flex-grow (how much can expand), flex-shrink (how much can reduce), flex-basis (initial size).
-       grow e shrink possono avere come valori 0 (doesn't grow/shrink) e 1 (does)*/
-    flex: 1 1 350px;
-    text-align: center;
-    color: #222;
-}
-
-.hero__riga1 { font-size: 1.3rem; margin-bottom: 10px; }
-.hero__riga2 { font-size: 2.4rem; font-weight: 700; line-height: 1.2; margin-bottom: 15px; color: #111; }
-.hero__riga3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 25px; }
-.hero__riga4 { font-size: 1.3rem; margin-bottom: 25px; }
-.hero__riga5 { font-size: 1.4rem; font-weight: 710; font-style: italic; margin-bottom: 30px; }
-.hero__btn {
-    display: inline-block;
-    background-color: transparent;
-    border: 2px solid #111;
-    color: #111;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: background-color 0.3s, color 0.3s;
-    margin-bottom: 50px;
-}
-.hero__btn:hover {
-    background-color: #111;
-    color: #fff;
-}
-/* =========================================
-   4. PER PC E SMARTPHONE
-   ========================================= */
 .wrap {
-    max-width: 1100px; /* per schermi enormi*/
-    margin: 0 auto; /* Centra il div nella pagina */
-    padding: 0 15px; /* Spazio laterale per evitare che i testi tocchino i bordi su mobile */
-}
-/* =========================================
-   SEZIONE LATEST PAPER (Layout a due colonne con FLEXBOX)
-   ========================================= */
-
-/* 1. IL CONTENITORE PRINCIPALE (FLEXBOX) */
-.layout-due-colonne {
-    display: flex; /* Attiviamo Flexbox */
-    gap: 13px; /* Spazio bianco tra le due colonne */
-    /*align-items: flex-start; /* Fa sì che le colonne non si allunghino automaticamente per essere alte uguali */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-/* 2. STILE COLONNA SINISTRA (.main-content-grid) */
-.main-content-grid {
-    flex: 1; /* IL TRUCCO: Questo dice a Flexbox "prendi tutto lo spazio che avanza" */
-}
-
-/* 3. STILE COLONNA DESTRA (.beta-content-grid) */
-.beta-content-grid {
-    max-width: 350px;
-    flex: 1; /* Impedisce di "schiacciare" questa colonna se lo spazio si restringe */
-}
-/*READ THE LATEST*/
-.intestazione-sinistra{
-    text-align: center ;
-    margin-bottom: 50px;
-}
-.intestazione-sinistra h2{  /* CON align-items: flex-start PARTONO DA STESSA ALTEZZA CON PAG 8*/
-    font-size: 1.9rem;
-    font-weight: normal; /* Rimuove il grassetto come nell'immagine */
-    margin: 0 0 10px 0;
-    color: #333;
-    text-align: center ;
-}
-.simboli-decorativi {
-    font-size: 1.7rem;
-    color: #555;
-    text-align: center ;
-
-}
-.card-articolo { margin-bottom: 60px; } /*SOTTO READ MORE*/
-.card-articolo h3 { font-size: 2rem; margin-bottom: 10px;font-family: var(--font-principale); } /*TITOLO DI MAIN*/
-.card-articolo h3 a { color: #111; text-decoration: none; } /*SEMPRE TITOLO*/
-.card-articolo img { width: 100%; margin-bottom: 15px; }
-
-.card-footer {
-    display: flex;
-    justify-content: space-between;  /* SPAZIO TRA READ MORE E TOGGLE SOCIAL*/
-    align-items: center;   /* SERVE? RIVEDERE*/
-    margin-top: 20px;  /* SPAZIO PRIMA DI PROSSIMO ARTICOLO MAIN*/
-}
-.titolo-sidebar{font-size: 1.5rem; font-style: italic;
-    font-weight: bold; margin: 0 0 40px 0; /* Allinea i margini con la colonna di sinistra */
-    color: #333}  /*PAG 8*/
-.notizia-breve { margin-bottom: 40px; }
-.notizia-breve h3 { font-size: 1.5rem; margin: 0 0 10px 0; font-weight: normal; } /* WED 29 APRIL*/
-
-.btn-vuoto {  /*READ MORE*/
+/* Bottone di base riutilizzabile*/
+.btn-outline {
     display: inline-block;
     padding: 10px 15px;
     border: 1px solid #111;
-    color: #111;
+    color: black;
     text-decoration: none;
     font-size: 1.1rem;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
-.btn-vuoto:hover {
+.btn-outline:hover {
     background-color: black;
     color: white;
 }
 
-/* =========================================
-   SEZIONE ARTICOLI INFERIORI (Side-by-side)
-   ========================================= */
-.articoli-inferiori {
+/* PRIMO MENU BIANCO (top-nav)*/
+
+.top-nav__mobile-bar {
+    display: none; /* Nasconde la barra mobile su PC */
+}
+.top-nav {
+    background-color: white;
+}
+.top-nav__toggle {
+    display: none; /* Nascosto su PC */
+}
+.top-nav__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
     display: flex;
-    gap: 60px; /* Stesso spazio vuoto usato sopra */
-    margin-top: 40px; /* Distanza dalla sezione superiore */
-    padding-top: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.top-nav__item {
+    text-align: center;
+}
+.top-nav__link {
+    display: block;
+    text-decoration: none;
+    color: dimgrey;
+    font-size: 0.9rem;
+    padding: 20px;
+    transition: all 0.3s;
+}
+.top-nav__link:hover {
+    color: white;
+    background-color: dimgrey;
+}
+ /* TESTATA (TITOLO)*/
+
+.masthead {
+    background-color: white;
+    text-align: center;
+    padding: 30px;
+}
+.masthead__title {
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: black;
+}
+.masthead__subtitle {
+    margin: 0;
+    font-size: 0.9rem;
+    color: dimgrey;
 }
 
-.articoli-inferiori .card-articolo {
-    flex: 1; /* Il trucco magico: dice a entrambi gli articoli di dividersi lo spazio al 50% e comprimersi fluidamente */
+/* SECONDO MENU NERO */
+
+.main-nav {
+    background-color: #222222;
+}
+.main-nav__toggle {
+    display: none; /* Nascosto su PC */
+}
+.main-nav__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.main-nav__item {
+    text-align: center;
+}
+.main-nav__link {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+.main-nav__link:hover {
+    color: white;
+    background-color: #555555;
 }
 
-/*NUOVA*/
-/* =========================================
-   DOWNLOAD THE LATEST PAPER
-   ========================================= */
-.download-section {
-    background-color: white; /* Grigio leggerissimo di sfondo */
-    padding: 60px 0;
+ /* SLOGAN SECTION */
+
+.hero {
+    background-image: url('https://placehold.co/1920x800/eeeeee/cccccc?text=Sfondo+Giornale+Sfocato');
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    border-bottom: 20px solid #222222;
+}
+.hero__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+.hero__content {
+    flex: 1 1 350px;
+    text-align: center;
+    color: #222;
+}
+.hero__kicker { font-size: 1.3rem; margin-bottom: 10px; }
+.hero__title { font-size: 2.4rem; font-weight: 700; line-height: 1.2; margin-bottom: 15px; color: #111; }
+.hero__subtitle { font-size: 1.4rem; font-weight: 700; margin-bottom: 25px; }
+.hero__text { font-size: 1.3rem; margin-bottom: 25px; }
+.hero__highlight { font-size: 1.4rem; font-weight: 710; font-style: italic; margin-bottom: 30px; }
+
+.hero__map {
+    flex: 0 300px;
+    padding: 0 30px 100px;
+    align-self: center;
+}
+.hero__map-img {
+    width: 100%;
+    border: 1px solid white;
+    box-shadow: 0 10px 25px grey;
 }
 
-.intestazione-centrale {
+/*LAYOUT DUE COLONNE */
+
+.two-col-layout {
+    display: flex;
+    gap: 13px;
+}
+.two-col-layout__main {
+    flex: 1;
+}
+.two-col-layout__sidebar {
+    max-width: 350px;
+}
+
+/* SEZIONE INTESTAZIONE (Read the Latest Paper Online) */
+.section-header {
     text-align: center;
     margin-bottom: 50px;
 }
-
-.intestazione-centrale h2 {
-    font-size: 2.2rem;
+.section-header__title {
+    font-size: 1.9rem;
     font-weight: normal;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+.section-header__decoration {
+    font-size: 1.7rem;
+    color: #555;
+}
+
+/* Articles section */
+.article-card {
+    margin-bottom: 60px;
+}
+.article-card__title {
+    font-size: 2rem;
     margin-bottom: 10px;
+    font-family: var(--font-principale);
+}
+.article-card__link {
+    color: #111;
+    text-decoration: none;
+}
+.article-card__image {
+    width: 100%;
+    margin-bottom: 15px;
+}
+.article-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.sidebar-title {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: bold;
+    margin: 0 0 40px 0;
     color: #333;
 }
 
-/* COME RICHIESTO: layout che si restringe ma non va mai a capo */
-.download-flex {
+/* NOTIZIA BREVE LATERALE */
+.news-brief { margin-bottom: 40px; }
+.news-brief__date { font-size: 1.5rem; margin-bottom: 10px; font-weight: normal; }
+.news-brief__text { margin-bottom: 15px; }
+
+/* SEZIONE ARTICOLI INFERIORI*/
+.bottom-articles {
+    display: flex;
+    gap: 60px;
+    margin-top: 40px;
+    padding-top: 40px;
+}
+/* Applico questa proprietà solo alle article-card che sono dentro bottom-articles) */
+.bottom-articles .article-card {
+    flex: 1;
+}
+
+/* Download the latest paper section */
+.download {
+    background-color: white;
+    padding: 60px 0;
+}
+.download__layout {
     display: flex;
     gap: 40px;
     align-items: flex-start;
-    flex-wrap: wrap; /* QUESTO IMPEDISCE LO SCIVOLAMENTO (stacking) */
+    flex-wrap: wrap;
 }
-
-.download-testo {
-    flex: 1; /* Occupa lo spazio rimanente */
+.download__content {
+    flex: 1;
 }
-
-.download-testo h3 {
+.download__title {
     font-size: 1.5rem;
     margin-top: 0;
     font-weight: normal;
 }
-
-.download-testo a {
-    color: royalblue; /* Colore azzurro del link */
+.download__text { margin-bottom: 15px; }
+.download__link {
+    color: royalblue;
     text-decoration: none;
     font-weight: bold;
 }
-.download-testo a:hover {
-    color: grey;
-}
-
-.download-immagine {
-    width: 35%; /* L'immagine prende il 35% dello spazio e si restringe fluidamente */
+.download__link:hover { color: grey; }
+.download__image-wrapper {
+    width: 35%;
     flex-shrink: 0;
 }
-
-.download-immagine img {
+.download__image {
     width: 100%;
-    box-shadow: 5px 5px 15px black; /* Effetto ombra per far sembrare il foglio reale */
+    box-shadow: 5px 5px 15px black;
 }
-/* =========================================
-   VIDEO BANNER (Sfondo scuro con testo)
-   ========================================= */
-.video-banner {
+
+   /* First black section (Politics on  Paper since October ... ) */
+.black_section {
     background-image: url('https://placehold.co/1920x500/222/444?text=Sfondo+Video');
     background-size: cover;
     background-position: center;
     text-align: center;
     padding: 80px 20px;
 }
-/*POLITICS ON PAPER*/
-.video-banner h2 {
+.black_section__title {
     font-size: 2rem;
     margin: 0 0 10px 0;
     font-weight: normal;
     color: white;
 }
-.video-banner p {
+.black_section__text {
     font-size: 1.1rem;
     margin: 0;
     color: white;
 }
-/* =========================================
-   POLITICAL CARTOONS
-   ========================================= */
-.cartoons-section {
+
+/* Vignette section*/
+.cartoons {
     padding: 40px;
     text-align: center;
 }
-.piccolo-titolo {
+.cartoons__kicker {
     font-size: 1.2rem;
     color: #555;
 }
-.cartoons-section h2 {
-    font-size: 2.5rem;
-}
-.sottotitolo-cartoon {
-    max-width: 1000px; /* Non fa allargare troppo il testo */
+.cartoons__title { font-size: 2.5rem; margin: 10px 0; }
+.cartoons__subtitle {
+    max-width: 1000px;
     margin: 0 auto 30px auto;
     color: #444;
     font-size: 1.4rem;
 }
-.btn-galleria {
-    display: inline-block;
-    padding: 10px 20px 10px 20px;
-    border: 1px solid #111;
-    color: #111;
-    text-decoration: none;
-    font-size: 0.85rem;
-    margin-bottom: 40px;
-}
-.btn-galleria:hover {
-    background-color: #111;
-    color: #fff;
-}
+.btn-outline--gallery { margin-bottom: 40px; }
+.cartoons__image { max-width: 100%; height: auto; }
 
-.cartoon-immagine img {
-    max-width: 100%;
-    height: auto;
-}
-/* =========================================
-   THANKS DOVER BLOCCO NERO
-   ========================================= */
-.testimonial-section {
+ /* Quote Section */
+.testimonial {
     background-color: black;
     color: #fff;
     padding: 60px 10px 20px 10px;
     text-align: center;
 }
-.testimonial-section p {
+.testimonial__text {
     font-size: 1.5rem;
     line-height: 1.6;
-
 }
-.testimonial-autore {
+.testimonial__author {
     font-size: 1rem;
     color: white;
 }
-/* =========================================
-   TIDAL GUIDE (Sezione chiara)  FOOTER
-   ========================================= */
+
+/* Last section */
 .tidal-guide {
-    background-color: #f4f4f4; /* Grigio chiarissimo */
-    padding: 20px 20px 20px 20px;
+    background-color: #f4f4f4;
+    padding: 20px;
     text-align: center;
 }
-.tidal-guide h2 {
+.tidal-guide__title {
     font-size: 1.8rem;
     font-weight: normal;
     color: #444;
     line-height: 1.2;
     margin-bottom: 20px;
 }
-.tidal-guide p {
+.tidal-guide__text {
     max-width: 900px;
     margin: 0 auto;
     font-size: 1.4rem;
     line-height: 1.6;
     color: #555;
 }
-
-.tidal-guide a {   /*READ MORE*/
+.tidal-guide__link {
     text-decoration: none;
-    color: #555
+    color: #555;
+}
 
+  /* Separatore*/
+
+.image-separator {
+    background-color: white;
 }
-/* ONDA SVG DECORATIVA */
-.onda-separatrice {
-    background-color: #f4f4f4; /* Continua lo sfondo di sopra */
-    height: 40px;
-}
-.onda-separatrice svg {
+.image-separator__img {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 100%; /* Si adatta sempre a tutto lo schermo */
+    height: auto;
 }
 
-/* =========================================
-   FOOTER PRINCIPALE A 4 COLONNE
-   ========================================= */
-.footer-principale {
-    background-color: #e6e6e6; /* Grigio leggermente più scuro dell'onda */
+/*Footer*/
+
+.site-footer {
+    background-color: #e6e6e6;
 }
-.footer-grid {
+.site-footer__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 Colonne di uguale larghezza */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 40px;
-    padding: 40px 15px 80px 15px; /* Spazio interno */
+    padding: 40px 15px 80px 15px;
 }
-
-.footer-col h4 {
+.site-footer__heading {
     font-size: 1.2rem;
     font-weight: normal;
     margin: 0 0 15px 0;
     color: #222;
 }
-.footer-col p {    /*PEOPLE POWERED PRESS*/
+.site-footer__text {
     font-size: 0.95rem;
     color: #444;
     line-height: 1.9;
     margin-bottom: 30px;
 }
-
-.footer-col ul {
+.site-footer__list {
     list-style: none;
     padding: 0;
 }
-
-.footer-col li {
-    margin-bottom: 20px;
-}
-
-.footer-col li a {
+.site-footer__item { margin-bottom: 20px; }
+.site-footer__link {
     text-decoration: none;
     color: #444;
     font-size: 1em;
 }
-.footer-col a:hover { color: grey; }
+.site-footer__link:hover { color: grey; }
 
-/* Dettagli della Colonna 2 */
-.titolo-indentato { margin-top: 20px !important; }
-.lista-indentata { padding-left: 15px !important; }
-
-/* Dettagli della Colonna 3 */
-.search-box {
+.site-footer__search {
     width: 100%;
     padding: 12px;
     border: none;
@@ -475,32 +400,25 @@ body {
     font-family: var(--font-principale);
     box-sizing: border-box;
 }
-.btn-donate {
+.site-footer__btn-donate {
     display: inline-block;
-    background-color: #ffc439; /* Giallo tipico del bottone Donate */
-    color: #000;
-    font-family: sans-serif;
+    background-color: orange;
+    color: black;
     font-weight: bold;
     text-decoration: none;
     padding: 8px 25px;
     border-radius: 20px;
     margin-bottom: 10px;
 }
-.carte-credito img { max-width: 100%; }
-
-/* Dettagli Colonna 4 */
-.twitter-box {
+.site-footer__social-box {
     display: inline-block;
     background-color: #000;
     padding: 8px;
     margin-top: 10px;
 }
-.twitter-box img { display: block; }
+.site-footer__social-icon { display: block; }
 
-/* =========================================
-   BARRA SCURA INFERIORE
-   ========================================= */
-.footer-bottom-bar {
+.site-footer__bottom-bar {
     background-color: black;
     color: white;
     text-align: center;
@@ -509,22 +427,19 @@ body {
     line-height: 1.6;
 }
 
-/* =========================================
-   RESPONSIVITÀ PER LATEST PAPER
-   ========================================= */
+/* Media Queries */
+
 @media (min-width: 769px) and (max-width: 1024px) {
-    .footer-grid{
+    .site-footer__grid {
         grid-template-columns: 1fr 1fr;
     }
-
 }
-@media (max-width: 768px) {  /* SI ATTIVA A 768px IPAD VERTICALE */
-    /* Trasforma Flexbox per impilare gli elementi verticalmente */
-    /* =========================================
-       MENU A TENDINA MOBILE
-       ========================================= */
-    /* Mostra i bottoni hamburger e li formatta */
-    .menu-toggle {
+
+@media (max-width: 768px) {
+    .masthead__title{
+        font-size: 1.9rem;
+    }
+    .top-nav__toggle{
         display: block;
         background: none;
         border: none;
@@ -533,50 +448,68 @@ body {
         cursor: pointer;
         padding: 15px 0;
     }
-    .menu-toggle-scuro {
-        color: white; /* Il bottone della fascia nera deve essere bianco */
-        align-items: center;
+    .top-nav__search {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.3rem;
+    }
+    .top-nav__mobile-bar {
+        display: flex;
+        justify-content: space-between; /* LA MAGIA: spinge uno a sx e uno a dx */
+        align-items: center; /* Li centra verticalmente */
+        padding: 15px 0;
+    }
+    .main-nav__toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-family: var(--font-principale);
+        font-size: 1.2rem;
+        cursor: pointer;
+        padding: 15px 0;
+        width: 100%;
+        text-align: center;
+        color: white;
+    }
+    .main-nav__toggle--dark {
+        color: white;
     }
 
-    /* Nasconde le liste di default e toglie la lente dal menu bianco (è nel bottone ora) */
-    .white-nav ul,
-    .navbar ul {
+    /* Nasconde le liste di default */
+    .top-nav__list,
+    .main-nav__list {
         display: none;
         flex-direction: column;
     }
-    .lente-pc { display: none; }
+    .top-nav__item--desktop-search { display: none; }
 
-    /* Allinea i link a sinistra invece che al centro */
-    .white-nav li,
-    .navbar li {
+    /* Allinea i link a sinistra */
+    .top-nav__item,
+    .main-nav__item {
         text-align: left;
     }
 
-    /* LA CLASSE MAGICA CHE AGGIUNGERÀ JAVASCRIPT */
-    .menu-aperto {
-        display: flex !important;
+    /* LA CLASSE MAGICA CON PUNTEGGIO ALTO TRAMITE BEM MODIFIER */
+    /* .top-nav__list.top-nav__list--aperto fa 20 punti! */
+    .top-nav__list.top-nav__list--aperto,
+    .main-nav__list.main-nav__list--aperto {
+        display: flex;
     }
 
-
-    .hero-inner{
+    .hero__inner,
+    .two-col-layout,
+    .bottom-articles,
+    .download__layout {
         flex-direction: column;
-    }
-
-    .layout-due-colonne {
-        flex-direction: column; /* Da "riga" diventa "colonna" (dall'alto verso il basso) */
         gap: 40px;
     }
-    /* Ridiamo alla sidebar il 100% della larghezza quando è impilata sotto */
-    .beta-content-grid {  /* CON QUESTO SI RIALLARGA*/
+
+    .two-col-layout__sidebar {
         width: 100%;
+        max-width: 100%;
     }
-    /* Impila anche i due articoli inferiori su smartphone */
-    .articoli-inferiori {
-        flex-direction: column;
-        gap: 40px;
-    }
-    /* Impila le 4 colonne del footer una sull'altra sui telefoni */
-    .footer-grid {
+
+    .site-footer__grid {
         grid-template-columns: 1fr;
     }
 }
