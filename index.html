@@ -13,9 +13,10 @@
 <div class="incapsulation">
     <!-- PRIMO MENU BIANCO CON SEARCH BAR -->
 
-    <nav class="top-nav">
+    <nav class="white-nav">
         <div class="wrap">
-            <ul>
+            <button id="btn-white-nav" class="menu-toggle">☰ Menu 🔍</button>
+            <ul id="lista-white-nav">
                 <li><a href="#">Subscribe/Donate</a></li>
                 <li><a href="#">About the Gazette</a></li>
                 <li><a href="#">Where to Get the Gazette</a></li>
@@ -26,7 +27,7 @@
         </div>
     </nav>
 
-    <header class="masthead">
+    <header class="title">
         <div class="wrap">
             <h1>The New Hampshire Gazette</h1>
             <p>The Nation's Oldest Newspaper™ &bull; Editor: Steven Fowle &bull; Founded 1756 by Daniel Fowle</p>
@@ -37,7 +38,8 @@
 
     <nav class="navbar">
         <div class="wrap">
-            <ul class="nav-links">
+            <button id="btn-black-nav" class="menu-toggle menu-toggle-scuro">☰ Departments</button>
+            <ul id="lista-black-nav">
                 <li><a href="#">The Fortnightly Rant</a></li>
                 <li><a href="#">The Alleged News®</a></li>
                 <li><a href="#">Mash Notes, Hate Mail & Other Correspondence</a></li>
@@ -287,13 +289,11 @@
                     <li><a href="#">The Northcountry Chronicle</a></li>
                     <li><a href="#">Page 8</a></li>
                     <li><a href="#">Digital Issues (PDFs)</a></li>
-                </ul>
-
-                <h4 class="titolo-indentato">The Bush/Nazi Stories</h4>
-                <ul class="lista-indentata">
+                    <li><a href="#">The Bush/Nazi Stories</a></li>
                     <li><a href="#">Bush/Nazi Link Confirmed</a></li>
                     <li><a href="#">Bush/Nazi Link Continued</a></li>
                 </ul>
+
             </div>
 
             <!-- Colonna 3 -->
@@ -327,5 +327,22 @@
         </div>
     </footer>
 </div>
+
+<script>document.addEventListener("DOMContentLoaded", function() {
+    const btnWhite = document.getElementById("btn-white-nav");
+    const listaWhite = document.getElementById("lista-white-nav");
+
+    btnWhite.addEventListener("click", function() {
+        listaWhite.classList.toggle("menu-aperto");
+    });
+
+    const btnBlack = document.getElementById("btn-black-nav");
+    const listaBlack = document.getElementById("lista-black-nav");
+
+    btnBlack.addEventListener("click", function() {
+        listaBlack.classList.toggle("menu-aperto");
+    });
+});
+</script>
 </body>
 </html>

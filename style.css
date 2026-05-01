@@ -8,16 +8,17 @@
 body {
     margin: 0; /* Rimuove i margini automatici del browser */
     font-family: var(--font-principale);
-    background-color: #ffffff; /* white */
+    background-color: white;
 }
-/* =========================================
-   1. UTILITY NAV (Menu in alto)
-   ========================================= */
-.top-nav {
-    background-color: #ffffff;
+/* Nascondi i bottoni del menu sui computer */
+.menu-toggle {
+    display: none;
+}
+.white-nav {
+    background-color: white;
 }
 /* PRIMA LISTA DI LINK */
-.top-nav ul {
+.white-nav ul {
     margin: 0;
     padding: 0;
     list-style: none; /* TOGLIE PALLINI AUTOMATICI*/
@@ -26,51 +27,50 @@ body {
     flex-wrap: wrap; /* Manda a capo i link su schermi stretti */
 }
 /* SINGOLO LINK */
-.top-nav li {
+.white-nav li {
     text-align: center; /* Centra la scritta dentro il suo nuovo blocco allargato */
 }
-.top-nav li a {
+.white-nav li a {
     display: block;
     text-decoration: none;   /* TOGLIE SOTTOLINEATURA AUTOMATICA */
-    color: var(--colore-testo-grigio);
+    color: dimgrey;
     font-size: 0.9rem;
     padding: 20px 20px 20px 20px;
     transition: all 0.3s;
 }
-
-.top-nav li a:hover {
-    color: #ffffff;
+.white-nav li a:hover {
+    color: white;
     background-color: dimgrey; /* ...e il box si "illumina" di grigio scuro/nero! */
 }
 /* =========================================
    2. MASTHEAD (Testata)
    ========================================= */
 /* spazio bianco*/
-.masthead {
-    background-color: #ffffff;
+.title {
+    background-color: white;
     text-align: center; /* tutto il testo centrale*/
     padding: 20px 20px 20px 20px;  /* SU / DESTRA / GIU / SINISTRA */
 }
 /*TITOLO*/
-.masthead h1 {
+.title h1 {
     margin: 0;
     font-size: 3.5rem; /* Testo grande per la massima visibilità */
     font-weight: 600; /* SPESSORE / GRASSETTO*/
     color: black; /*BLACK*/
 }
 /*DIDASCALIE*/
-.masthead p {
+.title p {
     margin: 0;
     font-size: 0.9rem;
-    color: #777777;
+    color: dimgrey;
 }
 /* =========================================
    3. SECONDA NAVBAR SCURA
    ========================================= */
 .navbar {
-    background-color: var(--colore-sfondo-scuro);
+    background-color: #222222;
 }
-.nav-links {
+.navbar ul {
     margin: 0;
     padding: 0;
     list-style: none;  /* TOGLIE PALLINI AUTOMATICI*/
@@ -79,31 +79,30 @@ body {
     flex-wrap: wrap;
 }
 /* SINGOLO ELEMENTO DELLA LISTA (Il "contenitore" del link) */
-.nav-links li {
+.navbar li {
     text-align: center; /* Centra la scritta dentro il suo nuovo blocco allargato */
 }
-.nav-links li a {
+.navbar li a {
     display: block;  /*  RENDE INTERO RETTANGOLO CLICCABILE */
     padding: 15px 15px;
-    color: #ffffff;
+    color: white;
     text-decoration: none; /* TOGLIE SOTTOLINEATURA AUTOMATICA */
     font-size: 0.8rem;
     transition: all 0.3s;
 }
-.nav-links li a:hover {
+.navbar li a:hover {
     color: white;
-    background-color: dimgrey; /* ...e il box si "illumina" di grigio scuro/nero! */
+    background-color: #555555; /* ...e il box si "illumina" di grigio scuro/nero! */
 }
 /* =========================================
    4. HERO SECTION (Notizia principale)
    ========================================= */
 .hero-container {  /* QUA C'E' SFONDO*/
-    width: 100%;
     /* Sfondo a tutto schermo */
     background-image: url('https://placehold.co/1920x800/eeeeee/cccccc?text=Sfondo+Giornale+Sfocato');
     background-size: cover;
     background-position: center;
-    padding: 10px 10px 30px;
+    padding: 10px 10px;
     border-bottom: 20px solid #222222;
 }
 .hero-inner {   /* PER ORE E' TUTTO QUI*/
@@ -112,11 +111,23 @@ body {
     align-items: center; /* Centra verticalmente testo e mappa */
     gap: 10px;  /* TRA MAPPA E SCRITTE*/
 }
+/* --- Lato Destro (Mappa) --- */
+.hero__mappa {
+    /* FIX APPLICATO ANCHE QUI */
+    flex: 0 300px;
+    padding: 0 30px 100px;
+    align-self: center;
+}
+.hero__mappa img {
+    width: 100%;
+    border: 1px solid white;
+    box-shadow: 0 10px 25px grey; /* Ombra 3D */
+}
 /* --- Lato Sinistro (Testo) --- */
 .hero__testo {
     /* FIX APPLICATO QUI:
-       I tre numeri sono: flex-grow, flex-shrink, flex-basis.
-       "350px" dice: se non hai almeno 350px di spazio a disposizione, vai a capo! */
+       I tre numeri sono: flex-grow (how much can expand), flex-shrink (how much can reduce), flex-basis (initial size).
+       grow e shrink possono avere come valori 0 (doesn't grow/shrink) e 1 (does)*/
     flex: 1 1 350px;
     text-align: center;
     color: #222;
@@ -127,7 +138,6 @@ body {
 .hero__riga3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 25px; }
 .hero__riga4 { font-size: 1.3rem; margin-bottom: 25px; }
 .hero__riga5 { font-size: 1.4rem; font-weight: 710; font-style: italic; margin-bottom: 30px; }
-
 .hero__btn {
     display: inline-block;
     background-color: transparent;
@@ -137,35 +147,20 @@ body {
     text-decoration: none;
     font-size: 1.1rem;
     transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 50px;
 }
 .hero__btn:hover {
     background-color: #111;
     color: #fff;
 }
-/* --- Lato Destro (Mappa) --- */
-.hero__mappa {
-    /* FIX APPLICATO ANCHE QUI */
-    flex: 1 1 200px;
-    padding: 0 30px 150px;
-
-}
-
-.hero__mappa img {
-    width: 100%;
-    border: 1px solid #ffffff;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Ombra 3D */
-}
-
 /* =========================================
    4. PER PC E SMARTPHONE
    ========================================= */
-
 .wrap {
     max-width: 1100px; /* per schermi enormi*/
     margin: 0 auto; /* Centra il div nella pagina */
     padding: 0 15px; /* Spazio laterale per evitare che i testi tocchino i bordi su mobile */
 }
-
 /* =========================================
    SEZIONE LATEST PAPER (Layout a due colonne con FLEXBOX)
    ========================================= */
@@ -206,8 +201,7 @@ body {
 
 }
 .card-articolo { margin-bottom: 60px; } /*SOTTO READ MORE*/
-.card-articolo h3 { font-size: 2rem; margin: 0 0 10px 0;
-    font-family: var(--font-principale); } /*TITOLO DI MAIN*/
+.card-articolo h3 { font-size: 2rem; margin-bottom: 10px;font-family: var(--font-principale); } /*TITOLO DI MAIN*/
 .card-articolo h3 a { color: #111; text-decoration: none; } /*SEMPRE TITOLO*/
 .card-articolo img { width: 100%; margin-bottom: 15px; }
 
@@ -233,8 +227,8 @@ body {
     transition: background-color 0.3s;
 }
 .btn-vuoto:hover {
-    background-color: #111;
-    color: #fff;
+    background-color: black;
+    color: white;
 }
 
 /* =========================================
@@ -249,7 +243,6 @@ body {
 
 .articoli-inferiori .card-articolo {
     flex: 1; /* Il trucco magico: dice a entrambi gli articoli di dividersi lo spazio al 50% e comprimersi fluidamente */
-    margin-bottom: 0;
 }
 
 /*NUOVA*/
@@ -257,7 +250,7 @@ body {
    DOWNLOAD THE LATEST PAPER
    ========================================= */
 .download-section {
-    background-color: #f8f8f8; /* Grigio leggerissimo di sfondo */
+    background-color: white; /* Grigio leggerissimo di sfondo */
     padding: 60px 0;
 }
 
@@ -269,7 +262,7 @@ body {
 .intestazione-centrale h2 {
     font-size: 2.2rem;
     font-weight: normal;
-    margin: 0 0 10px 0;
+    margin-bottom: 10px;
     color: #333;
 }
 
@@ -292,9 +285,12 @@ body {
 }
 
 .download-testo a {
-    color: #0073aa; /* Colore azzurro del link */
+    color: royalblue; /* Colore azzurro del link */
     text-decoration: none;
     font-weight: bold;
+}
+.download-testo a:hover {
+    color: grey;
 }
 
 .download-immagine {
@@ -304,14 +300,12 @@ body {
 
 .download-immagine img {
     width: 100%;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.2); /* Effetto ombra per far sembrare il foglio reale */
+    box-shadow: 5px 5px 15px black; /* Effetto ombra per far sembrare il foglio reale */
 }
-
 /* =========================================
    VIDEO BANNER (Sfondo scuro con testo)
    ========================================= */
 .video-banner {
-    width: 100%;
     background-image: url('https://placehold.co/1920x500/222/444?text=Sfondo+Video');
     background-size: cover;
     background-position: center;
@@ -325,41 +319,34 @@ body {
     font-weight: normal;
     color: white;
 }
-
 .video-banner p {
     font-size: 1.1rem;
     margin: 0;
     color: white;
 }
-
 /* =========================================
    POLITICAL CARTOONS
    ========================================= */
 .cartoons-section {
-    padding: 60px 0;
+    padding: 40px;
     text-align: center;
 }
-
 .piccolo-titolo {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #555;
 }
-
 .cartoons-section h2 {
     font-size: 2.5rem;
-    margin: 10px 0;
 }
-
 .sottotitolo-cartoon {
-    max-width: 800px; /* Non fa allargare troppo il testo */
+    max-width: 1000px; /* Non fa allargare troppo il testo */
     margin: 0 auto 30px auto;
     color: #444;
-    font-size: 1.5rem;
-
+    font-size: 1.4rem;
 }
 .btn-galleria {
     display: inline-block;
-    padding: 15px 15px 15px 15px;
+    padding: 10px 20px 10px 20px;
     border: 1px solid #111;
     color: #111;
     text-decoration: none;
@@ -375,57 +362,51 @@ body {
     max-width: 100%;
     height: auto;
 }
-
 /* =========================================
    THANKS DOVER BLOCCO NERO
    ========================================= */
 .testimonial-section {
-    background-color: #2b2b2b;
+    background-color: black;
     color: #fff;
-    padding: 60px 20px;
+    padding: 60px 10px 20px 10px;
     text-align: center;
 }
-
 .testimonial-section p {
-    max-width: 800px;
-    margin: 0 auto 20px auto;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     line-height: 1.6;
-}
 
+}
 .testimonial-autore {
     font-size: 1rem;
-    color: #aaa;
+    color: white;
 }
-
 /* =========================================
    TIDAL GUIDE (Sezione chiara)  FOOTER
    ========================================= */
 .tidal-guide {
     background-color: #f4f4f4; /* Grigio chiarissimo */
-    padding: 60px 20px 40px 20px;
+    padding: 20px 20px 20px 20px;
     text-align: center;
 }
-
 .tidal-guide h2 {
     font-size: 1.8rem;
     font-weight: normal;
     color: #444;
-    line-height: 1.4;
+    line-height: 1.2;
     margin-bottom: 20px;
 }
-
 .tidal-guide p {
     max-width: 900px;
     margin: 0 auto;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     line-height: 1.6;
     color: #555;
 }
 
 .tidal-guide a {   /*READ MORE*/
-
+    text-decoration: none;
     color: #555
+
 }
 /* ONDA SVG DECORATIVA */
 .onda-separatrice {
@@ -444,10 +425,9 @@ body {
 .footer-principale {
     background-color: #e6e6e6; /* Grigio leggermente più scuro dell'onda */
 }
-
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 Colonne di uguale larghezza */
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 Colonne di uguale larghezza */
     gap: 40px;
     padding: 40px 15px 80px 15px; /* Spazio interno */
 }
@@ -458,19 +438,26 @@ body {
     margin: 0 0 15px 0;
     color: #222;
 }
+.footer-col p {    /*PEOPLE POWERED PRESS*/
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
 
 .footer-col ul {
     list-style: none;
     padding: 0;
-    margin: 0 0 30px 0;
 }
 
-.footer-col li { margin-bottom: 12px; }
+.footer-col li {
+    margin-bottom: 20px;
+}
 
-.footer-col a {
+.footer-col li a {
     text-decoration: none;
     color: #444;
-    font-size: 0.95rem;
+    font-size: 1em;
 }
 .footer-col a:hover { color: grey; }
 
@@ -486,15 +473,8 @@ body {
     background-color: #fff;
     margin-bottom: 30px;
     font-family: var(--font-principale);
+    box-sizing: border-box;
 }
-
-.footer-col p {    /*PEOPLE POWERED PRESS*/
-    font-size: 0.95rem;
-    color: #444;
-    line-height: 1.5;
-    margin-bottom: 30px;
-}
-
 .btn-donate {
     display: inline-block;
     background-color: #ffc439; /* Giallo tipico del bottone Donate */
@@ -521,25 +501,70 @@ body {
    BARRA SCURA INFERIORE
    ========================================= */
 .footer-bottom-bar {
-    background-color: #2b2b2b;
-    color: #aaa;
+    background-color: black;
+    color: white;
     text-align: center;
     padding: 30px 20px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     line-height: 1.6;
 }
 
 /* =========================================
    RESPONSIVITÀ PER LATEST PAPER
    ========================================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .footer-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
 @media (max-width: 768px) {  /* SI ATTIVA A 768px IPAD VERTICALE */
     /* Trasforma Flexbox per impilare gli elementi verticalmente */
+    /* =========================================
+       MENU A TENDINA MOBILE
+       ========================================= */
+    /* Mostra i bottoni hamburger e li formatta */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-family: var(--font-principale);
+        font-size: 1.2rem;
+        cursor: pointer;
+        padding: 15px 0;
+    }
+    .menu-toggle-scuro {
+        color: white; /* Il bottone della fascia nera deve essere bianco */
+        align-items: center;
+    }
+
+    /* Nasconde le liste di default e toglie la lente dal menu bianco (è nel bottone ora) */
+    .white-nav ul,
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+    }
+    .lente-pc { display: none; }
+
+    /* Allinea i link a sinistra invece che al centro */
+    .white-nav li,
+    .navbar li {
+        text-align: left;
+    }
+
+    /* LA CLASSE MAGICA CHE AGGIUNGERÀ JAVASCRIPT */
+    .menu-aperto {
+        display: flex !important;
+    }
+
+
+    .hero-inner{
+        flex-direction: column;
+    }
+
     .layout-due-colonne {
         flex-direction: column; /* Da "riga" diventa "colonna" (dall'alto verso il basso) */
         gap: 40px;
-    }
-    .download-flex {
-        flex-direction: column;
     }
     /* Ridiamo alla sidebar il 100% della larghezza quando è impilata sotto */
     .beta-content-grid {  /* CON QUESTO SI RIALLARGA*/
