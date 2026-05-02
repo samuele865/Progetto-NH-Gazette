@@ -475,7 +475,7 @@ body {
         color: white;
     }
 
-    /* Nasconde le liste di default */
+    /* Nasconde le liste */
     .top-nav__list,
     .main-nav__list {
         display: none;
