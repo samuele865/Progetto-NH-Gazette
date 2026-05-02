@@ -455,8 +455,8 @@ body {
     }
     .top-nav__mobile-bar {
         display: flex;
-        justify-content: space-between; /* LA MAGIA: spinge uno a sx e uno a dx */
-        align-items: center; /* Li centra verticalmente */
+        justify-content: space-between;
+        align-items: center;
         padding: 15px 0;
     }
     .main-nav__toggle {
@@ -489,8 +489,6 @@ body {
         text-align: left;
     }
 
-    /* LA CLASSE MAGICA CON PUNTEGGIO ALTO TRAMITE BEM MODIFIER */
-    /* .top-nav__list.top-nav__list--aperto fa 20 punti! */
     .top-nav__list.top-nav__list--aperto,
     .main-nav__list.main-nav__list--aperto {
         display: flex;
