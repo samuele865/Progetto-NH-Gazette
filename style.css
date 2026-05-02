@@ -55,7 +55,7 @@ body {
 .top-nav__link {
     display: block;
     text-decoration: none;
-    color: dimgrey;
+    color: #555555;
     font-size: 0.9rem;
     padding: 20px;
     transition: all 0.3s;
@@ -80,7 +80,7 @@ body {
 .masthead__subtitle {
     margin: 0;
     font-size: 0.9rem;
-    color: dimgrey;
+    color: #555555;
 }
 
 /* SECONDO MENU NERO */
