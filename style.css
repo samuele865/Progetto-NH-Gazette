@@ -267,6 +267,7 @@ body {
 
    /* First black section (Politics on  Paper since October ... ) */
 .black_section {
+    background-color: #222222;
     background-image: url('https://placehold.co/1920x500/222/444?text=Sfondo+Video');
     background-size: cover;
     background-position: center;
